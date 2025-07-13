@@ -44,10 +44,6 @@ Edge handling is performed via **zero-padding**, ensuring a consistent frame siz
 ---
 
 
-## 👤 Authors
-
-Naor David & Itay Ksasos  
-Electrical & Electronics Engineering Students
 
 
 
