@@ -39,7 +39,7 @@ Edge handling is performed via **zero-padding**, ensuring a consistent frame siz
 - Input image: 8×8 grayscale values from file  
 - Output image stored in `output_image.txt`  
 - `frame_complete` indicates image processing end  
-- Simulation waveforms confirm median accuracy and correct border handling
+
 
 ---
 
