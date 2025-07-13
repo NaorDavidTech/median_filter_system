@@ -1,51 +1,53 @@
-# median_filter_system
-median filter system for  image pixels
+# 🖼️ Median Filter System in Verilog
 
-# 🧮 Median Filter (3x3) in Verilog
-
-This project implements a **median filter** for image processing using **Verilog HDL**.  
-The filter receives 9 pixel values (3x3 window) and computes the **median** value in real time, useful for **noise reduction** in grayscale images.
+This project implements a **complete image processing pipeline** using a **3×3 median filter** in **Verilog HDL**.  
+The system receives an **8×8 grayscale image** and processes each pixel using a **sliding 3×3 window**, computing the **median** to reduce noise (e.g., salt-and-pepper).  
+Edge handling is performed via **zero-padding**, ensuring a consistent frame size.
 
 ---
 
 ## 📁 Files Included
 
-- `median_filter.v` – Main Verilog module implementing the 3x3 median filter
-- `median_tb.v` – Testbench verifying correctness with predefined pixel sets
-
-
+- `median_filter_system.v` – Top module integrating all submodules  
+- `median_filter.v` – Core 3×3 median filter logic  
+- `zero_edge_handler.v` – Adds zero-padding and controls output sequence  
+- `median_filter_system_tb.v` – Full system testbench  
+- `test_image.txt` – 8×8 input image (grayscale hex format)  
+- `output_image.txt` – Output image after filtering  
 
 ---
 
 ## ⚙️ Features
 
-- **Input**: 9 grayscale pixels `p0` to `p8` (each 8 bits)
-- **Output**: Median value (8-bit)
-- **Architecture**:
-  - Pure combinational logic
-  - Optimized sorting for 9 elements
-- **Application**: Removes salt-and-pepper noise while preserving edges
+- **Input**:  
+  - 8-bit grayscale pixels (`data_in`)  
+  - Control signals: `clk`, `rst_n`, `data_valid`  
+- **Output**:  
+  - Filtered pixel (`data_out`)  
+  - `data_valid_out`, `frame_complete` indicators  
+- **System behavior**:  
+  - Real-time 3×3 median filtering  
+  - Zero-padding around edges  
+  - Fully synchronous pipeline  
+- **Application**: Noise reduction in small grayscale images
 
 ---
 
 ## 🧪 Simulation
 
-- Simulated in ModelSim (or compatible tool)
-- Inputs tested with multiple noisy pixel sets
-- Median output matches expected middle value
-- Waveforms included for validation
+- Simulated in ModelSim  
+- Input image: 8×8 grayscale values from file  
+- Output image stored in `output_image.txt`  
+- `frame_complete` indicates image processing end  
+- Simulation waveforms confirm median accuracy and correct border handling
 
 ---
 
-## 📎 Documentation
 
-- `rtl_diagram.pdf`: RTL architecture of the filter logic
-- `simulation_waveform.pdf`: Timing and functional behavior
-- `report.pdf`: Full project report in Hebrew, including:
-  - Problem definition
-  - Design flow
-  - Verification results
+## 👤 Authors
 
----
+Naor David & Itay Ksasos  
+Electrical & Electronics Engineering Students
+
 
 
